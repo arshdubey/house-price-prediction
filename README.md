@@ -47,5 +47,5 @@ print("Predicted price (scaled):", pred)
 - Add model persistence (joblib) and a small CLI or web API for serving predictions.
 
 **License & Attribution:**
-- This repository is provided as-is for learning and experimentation.
+- This repository is provided as-is for learning and experimentation
 
