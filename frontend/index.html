@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Real Estate - AI Price Predictor</title>
+    <meta name="description" content="Predict house prices accurately with our AI-powered real estate estimation tool.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="app-header">
+            <h1><i class="fa-solid fa-house-chimney-window"></i> Lumina</h1>
+            <p>Intelligent Market Price Estimation</p>
+        </header>
+
+        <section class="prediction-card glass-panel">
+            <div class="form-grid">
+                
+                <!-- Location Section -->
+                <div class="input-group location-group">
+                    <label for="city">City / Region</label>
+                    <div class="input-with-button">
+                        <input type="text" id="city" placeholder="e.g., New York, Mumbai" required>
+                        <button type="button" id="locate-btn" class="btn-icon" aria-label="Locate Me" title="Use my current location">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                        </button>
+                    </div>
+                    <small id="location-status" class="status-text"></small>
+                </div>
+
+                <div class="input-group">
+                    <label for="area">Locality / Area (Optional)</label>
+                    <input type="text" id="area" placeholder="e.g., Downtown, Andheri">
+                </div>
+
+                <!-- Property Details Section -->
+                <div class="input-group">
+                    <label for="property-type">Property Type</label>
+                    <select id="property-type" required>
+                        <option value="apartment" selected>Apartment</option>
+                        <option value="independent">Independent House / Villa</option>
+                        <option value="penthouse">Penthouse</option>
+                        <option value="studio">Studio</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="bhk">BHK (Bedrooms)</label>
+                    <select id="bhk" required>
+                        <option value="1">1 BHK</option>
+                        <option value="2" selected>2 BHK</option>
+                        <option value="3">3 BHK</option>
+                        <option value="4">4 BHK</option>
+                        <option value="5">5+ BHK</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="sqft">Square Footage (sq.ft)</label>
+                    <input type="number" id="sqft" placeholder="e.g., 1200" min="100" max="20000" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="age">Property Age (Years)</label>
+                    <input type="number" id="age" placeholder="e.g., 5" min="0" max="100" value="0">
+                </div>
+
+            </div>
+
+            <div class="action-container">
+                <button type="button" id="predict-btn" class="btn-primary">
+                    Predict Market Value <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+            </div>
+            
+            <div id="result-container" class="result-container hidden">
+                <div class="result-content">
+                    <p class="result-label">Estimated Market Value</p>
+                    <h2 id="predicted-price" class="price-text">$0</h2>
+                    <p id="price-range" class="price-range">Range: $0 - $0</p>
+                    <button type="button" id="convert-currency-btn" class="btn-secondary" style="margin-bottom: 1rem;">
+                        Convert to Local Currency <i class="fa-solid fa-coins"></i>
+                    </button>
+                    <p class="disclaimer"><i class="fa-solid fa-circle-info"></i> This is an AI-driven estimate based on market heuristics.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
